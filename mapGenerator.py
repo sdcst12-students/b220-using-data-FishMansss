@@ -55,4 +55,9 @@ for i in range(1):
     world.update(Name=name)
     print(world)
     
+    ##Generate Mainworld size
+    x = dice(2)-2
+    y = dice(2)-7+x
+    if x==0:
+        y=0
     
