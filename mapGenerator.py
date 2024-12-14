@@ -9,9 +9,9 @@ world = {}
 for i in range(1):
 ##starport
     x = dice(2)
-    if x ==1 or x ==2 or x ==3:
+    if x ==2 or x ==3 or x==4:
         sp = 'A'
-    if x ==4 or x ==5:
+    if x ==5 or x ==6:
         sp = 'B'
     if x  in [7,8]:
         sp = 'C'
@@ -55,7 +55,7 @@ for i in range(1):
     world.update(Name=name)
     print(world)
     
-    ##Generate Mainworld size
+    ##Generate Mainworld size / atmosphere
     x = dice(2)-2
     y = dice(2)-7+x
     if x==0:
