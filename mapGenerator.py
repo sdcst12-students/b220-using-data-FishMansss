@@ -53,11 +53,35 @@ for i in range(1):
 
 
     world.update(Name=name)
-    print(world)
+   
     
-    ##Generate Mainworld size / atmosphere
+    ##Generate Mainworld size 
     x = dice(2)-2
-    y = dice(2)-7+x
-    if x==0:
-        y=0
+    if x in [5,6,7,8,9,10]:
+        size=x
+    if x in [0,1]:
+        size=x+2
+    if x in [2,3,4]:
+        size=x+1
+    world.update(WorldSize=size)    
+    ## / atmosphere
+    if size<1:
+        atmosphere=0
+    else:
+        y = dice(2)-7+x
+        if y in [0,1,2,3,10,11,12,13,14]:
+            atmosphere=y+1
+        else:
+            atmosphere=y
+    world.update(Atmosphere=atmosphere)
     
+    ##hydrographics
+    x = dice(2)-7+world['WorldSize']
+    if world['WorldSize']==-1:
+        hydrographics = 0
+    else: 
+        hydrographics = x
+    world.update(Hydrographics=hydrographics)
+    
+    
+    print(world)
